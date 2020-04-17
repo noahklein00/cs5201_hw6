@@ -34,15 +34,15 @@ nVect<T>::nVect(const int size)
 	if(size == 0)
 	{
 		m_arr = new T[1];
-		m_arr[0] = 0;
+		// m_arr[0] = 0;
 	}
 	else
 	{
 		m_arr = new T[size];
-		for(int i = 0; i < size; i++)
-		{
-			m_arr[i] = 0;
-		}
+		// for(int i = 0; i < size; i++)
+		// {
+		// 	m_arr[i] = 0;
+		// }
 	}
 	m_size = size;
 	m_available = size;

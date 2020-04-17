@@ -39,7 +39,10 @@ clean:
 
 # Dependency lists for the various source files
 driver.o: driver.cpp\
-          qreg.cpp
+          qreg.cpp\
+          kronecker.h\
+          kronecker.hpp\
+          hadamard.cpp
 	g++ -c driver.cpp
 
 qreg.o: qreg.cpp\

@@ -87,6 +87,17 @@ complex<T> complex<T>::operator*(const complex<T>& rhs) const
   return copy;
 }
 
+template <typename T>
+complex<T>& complex<T>::operator=(const int zero)
+{
+  if(zero == 0)
+  {
+    m_a = 0;
+    m_b = 0;
+  }
+  return *this;
+}
+
 //***************************** Friends *************************************//
 
 template <typename T>

@@ -153,6 +153,8 @@ class complex
      */
     complex<T> operator*(const complex<T>& rhs) const;
 
+    complex<T>& operator=(const int zero);
+
     // Friends //
 
     /*! \brief Insertion operator
