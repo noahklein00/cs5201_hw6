@@ -71,6 +71,13 @@ class complex
      */
     complex& operator=(const complex& rhs);
 
+    /*! \brief Destructor
+     *
+     * Description: Placeholder function for complex destructor.
+     * \post The calling object is safely desctructed.
+     */
+    ~complex() {}
+
     // Accessors //
 
     /*! \brief Real Accessor
