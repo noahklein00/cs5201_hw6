@@ -1,6 +1,6 @@
 /*! \file
  *
- * Definitions for the complex class. \n
+ * Definitions for the kronecker class. \n
  * Programmer: Noah Klein \n
  * Class: CS5201 \n
  * Assignment: Homework 6 \n
@@ -16,8 +16,6 @@ class kronecker
 {
   public:
     nTrix<T> operator()(const nTrix<T>& lhs, const nTrix<T>& rhs);
-
-
 };
 
 #include "kronecker.hpp"

@@ -162,6 +162,52 @@ void nVect<T>::push_back(const T & item)
 }
 
 template <typename T>
+void nVect<T>::push_front(const T & item)
+{
+	T* temp_arr;
+	if(m_available == 0)
+	{
+		if(m_arr)
+		{
+			delete[] m_arr;
+			m_arr = new T[1];
+		}
+		else
+		{
+			m_arr = new T[1];
+		}
+		m_arr[0] = item;
+		m_size = 1;
+		m_available = 1;
+	}
+	else if(m_size >= m_available && m_available != 0)
+	{
+		temp_arr = new T[m_available * 2];
+		for(int i = 0; i < m_size; i++)
+		{
+			temp_arr[i+1] = m_arr[i];
+		}
+		delete[] m_arr;
+		m_arr = temp_arr;
+		m_available = m_available * 2;
+		m_arr[0] = item;
+		m_size++;
+	}
+	else
+	{
+		temp_arr = new T[m_available];
+		for(int i = 0; i < m_size; i++)
+		{
+			temp_arr[i+1] = m_arr[i];
+		}
+		delete[] m_arr;
+		m_arr = temp_arr;
+		m_arr[0] = item;
+		m_size++;
+	}
+}
+
+template <typename T>
 void nVect<T>::resize(const int new_size)
 {
 	T* temp_arr;

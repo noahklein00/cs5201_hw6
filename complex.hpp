@@ -55,7 +55,7 @@ complex<T> complex<T>::operator!() const
 template <typename T>
 T complex<T>::operator~() const
 {
-  return sqrt(m_a * m_a + m_b * m_b);
+  return (m_a * m_a + m_b * m_b);
 }
 
 //***************************** Mutators ************************************//
@@ -88,13 +88,17 @@ complex<T> complex<T>::operator*(const complex<T>& rhs) const
 }
 
 template <typename T>
-complex<T>& complex<T>::operator=(const int zero)
+complex<T>& complex<T>::operator=(const int number)
 {
-  if(zero == 0)
-  {
-    m_a = 0;
-    m_b = 0;
-  }
+  m_a = number;
+  m_b = 0;
+  return *this;
+}
+
+template <typename T>
+complex<T>& complex<T>::operator+=(const complex<T>& rhs)
+{
+  *this = *this + rhs;
   return *this;
 }
 

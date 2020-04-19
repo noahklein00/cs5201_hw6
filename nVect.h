@@ -110,6 +110,17 @@ class nVect
 		 */
 		void push_back(const T & item);
 
+		/*! \brief Adds an element to the front of the vector
+		 *
+		 * Description: Adds the parameter passed to the "front" of the
+		 * calling nVect object. This also increments the size and/or
+		 * resizes the vector properly.
+		 * \param item is the object to be added to the front of the vector.
+		 * \post item is now stored at the "front" of the vector and
+		 * the appropriate m_size and m_available are set.
+		 */
+		void push_front(const T & item);
+
 		/*! \brief Sets a new size for the vector
 		 *
 		 * Description: Allows the user to override the data stored
@@ -487,6 +498,7 @@ class nVect
 	 * of the nVect array.
 	 */
     iterator end() { return iterator(this, m_size); }
+
 };
 
 /*! \brief + operator

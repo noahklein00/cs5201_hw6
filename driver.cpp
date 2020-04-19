@@ -1,38 +1,58 @@
 #include "qreg.cpp"
-#include "nTrix.h"
-#include "kronecker.h"
-#include "nVect.h"
-#include "hadamard.cpp"
-#include <numeric>
+#include "gatedata.h"
 
 int main()
 {
-  // nTrix<int> noah({{1,0},{0,0}});
-  // nTrix<int> sean({{1,0},{0,1}});
-  // kronecker<int> prod;
-  // nVect<nTrix<int>> matr_list({noah,sean});
-  nVect<complex<float>> copy;
-  complex<float> one(1,0);
-  complex<float> zero(0,0);
+  qreg<3> grover_reg;
+  qreg<3> shor_reg;
+  gatedata grover[8];
+  gatedata shor[6];
 
-  copy.push_back(one);
-  for(int i = 0; i < 7; ++i)
+  double rt = 1.414213562;
+  nTrix<cpf> X({{cpf(0,0),cpf(1,0)},{cpf(1,0),cpf(0,0)}});
+  nTrix<cpf> Z({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(-1,0)}});
+  nTrix<cpf> H({{cpf(1/rt,0),cpf(1/rt,0)},{cpf(1/rt,0),cpf(-1/rt,0)}});
+  nTrix<cpf> S({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(0,1)}});
+  nTrix<cpf> T({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(rt/2,rt/2)}});
+  gatedata hads({0,1,2},{},3,H);
+  gatedata zone({0},{2},3,Z);
+  gatedata ztwo({0},{1},3,Z);
+  gatedata xes({0,1,2},{},3,X);
+  gatedata zthree({0},{1,2},3,Z);
+  gatedata hadtwo({1},{},3,H);
+  gatedata sone({0},{1},3,S);
+  gatedata hadthree({0},{},3,H);
+  gatedata tone({2},{1},3,T);
+  gatedata stwo({2},{0},3,S);
+
+  grover[0] = hads;
+  grover[1] = zone;
+  grover[2] = ztwo;
+  grover[3] = hads;
+  grover[4] = xes;
+  grover[5] = zthree;
+  grover[6] = xes;
+  grover[7] = hads;
+
+  shor[0] = hads;
+  shor[1] = hadtwo;
+  shor[2] = sone;
+  shor[3] = hadthree;
+  shor[4] = tone;
+  shor[5] = stwo;
+
+  for(int i = 0; i < 8; i++)
   {
-    copy.push_back(zero);
+    grover_reg * grover[i];
   }
 
-  std::cout << copy << std::endl;
+  std::cout << grover_reg << std::endl;
 
+  for(int i = 0; i < 5; i++)
+  {
+    shor_reg * shor[i];
+  }
 
-  hadamard testy({1,2,3},{1},2);
-  qreg<3> reggy(copy);
-
-  copy = testy.gate * copy;
-
-  std::cout << copy << std::endl;
-
-  // auto composed_operator = std::accumulate(matr_list.begin(), matr_list.end(),
-  //   nTrix<int>({{1}}), prod);
-  // std::cout << composed_operator << std::endl;
+  std::cout << shor_reg << std::endl;
   return 0;
 }

@@ -1,6 +1,6 @@
 /*! \file
  *
- * Definitions for the baseGate class. \n
+ * Definitions for the hadamard class. \n
  * Programmer: Noah Klein \n
  * Class: CS5201 \n
  * Assignment: Homework 6 \n
@@ -13,19 +13,21 @@
 #include "nVect.h"
 #include "complex.h"
 #include "kronecker.h"
-#include "qreg.h"
+#include "gatedata.h"
 #include <numeric>
+#include <algorithm>
 
-class hadamard
+class hadamard: public virtual basegate, public gatedata
 {
   private:
-    // nTrix<complex<float>> gate;
-    float root_two = 1.41421;
+    nTrix<complex<float>>* m_gate;
+    double m_root_two = 1.414213562;
   public:
-    nTrix<complex<float>> gate;
+    hadamard();
     hadamard(const std::initializer_list<int>& a, const
       std::initializer_list<int>& b, const int size);
-    //qreg<3> operator*(const qreg<3>& state);
+    virtual nVect<complex<float>> operator*(const nVect<complex<float>>& rhs)
+      const;
 
 };
 

@@ -153,7 +153,29 @@ class complex
      */
     complex<T> operator*(const complex<T>& rhs) const;
 
-    complex<T>& operator=(const int zero);
+    /*! \brief Integer = operator
+     *
+     * Description: Allows the complex number to be set "equal as" a passed
+     * integer.
+     * \param number is the number to set the complex object "equal as".
+     * \return Returns a complex object whose non-imaginary component is equal
+     * to the parameter.
+     * \pre Binary * operator, Binary + operator, and unary - operator must be
+     * defined for type T.
+     * \post The calling object is now set "equal as" the parameter
+     */
+    complex<T>& operator=(const int number);
+
+    /*! \brief += operator
+     *
+     * Description: += operator overload to increase functionality with the
+     * nTrix (and other) classes.
+     * \param rhs is the complex number to add to the calling object.
+     * \return Returns *this with modified data
+     * \pre Binary + operator, and = operator must be defined for type T.
+     * \post The calling object has the parameter added to it.
+     */
+    complex<T>& operator+=(const complex<T>& rhs);
 
     // Friends //
 
