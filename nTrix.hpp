@@ -24,7 +24,7 @@ nTrix<T>::nTrix()
 template <typename T>
 nTrix<T>::nTrix(const std::initializer_list<std::initializer_list<T>>& grid)
 {
-	int temp_size = grid.begin() -> size();
+	unsigned int temp_size = grid.begin() -> size();
 	for(auto r_itr = grid.begin(); r_itr != grid.end(); r_itr++)
 	{
 		if((*r_itr).size() != temp_size)

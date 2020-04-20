@@ -39,7 +39,7 @@ gatedata::~gatedata()
 nTrix<cpf> gatedata::creation(const listy& a, const listy& b, const int size)
   const
 {
-  if(((a.size() + b.size()) > size) || a.size() < 1)
+  if(((a.size() + b.size()) > (unsigned int)size) || a.size() < 1)
   {
     std::cout << "Incorrect amount of control/applied bits: ";
     throw(std::domain_error(std::to_string(a.size())));
