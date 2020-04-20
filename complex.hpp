@@ -102,6 +102,20 @@ complex<T>& complex<T>::operator+=(const complex<T>& rhs)
   return *this;
 }
 
+template <typename T>
+complex<T>& complex<T>::operator-=(const complex<T>& rhs)
+{
+  *this = *this - rhs;
+  return *this;
+}
+
+template <typename T>
+complex<T>& complex<T>::operator*=(const complex<T>& rhs)
+{
+  *this = *this * rhs;
+  return *this;
+}
+
 //***************************** Friends *************************************//
 
 template <typename T>

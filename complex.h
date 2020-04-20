@@ -184,6 +184,28 @@ class complex
      */
     complex<T>& operator+=(const complex<T>& rhs);
 
+    /*! \brief -= operator
+     *
+     * Description: -= operator overload to increase functionality with the
+     * nTrix (and other) classes.
+     * \param rhs is the complex number to subtract from the calling object.
+     * \return Returns *this with modified data
+     * \pre Binary - operator, and = operator must be defined for type T.
+     * \post The calling object has the parameter subtracted from it.
+     */
+    complex<T>& operator-=(const complex<T>& rhs);
+
+    /*! \brief *= operator
+     *
+     * Description: *= operator overload to increase functionality with the
+     * nTrix (and other) classes.
+     * \param rhs is the complex number to multiply to the calling object.
+     * \return Returns *this with modified data
+     * \pre Binary * operator, and = operator must be defined for type T.
+     * \post The calling object has the parameter multiplied to it.
+     */
+    complex<T>& operator*=(const complex<T>& rhs);
+
     // Friends //
 
     /*! \brief Insertion operator
