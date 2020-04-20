@@ -18,7 +18,6 @@
 CXX = /usr/bin/g++
 FLAGS = -Wall -Wextra -Wpedantic -Werror
 OBJECTS = driver.o\
-          qreg.o\
           gatedata.o
 
 .SUFFIXES: .cpp
@@ -40,14 +39,12 @@ clean:
 
 # Dependency lists for the various source files
 driver.o: driver.cpp\
-          qreg.cpp\
           qreg.h\
+          qreg.hpp\
           nVect.h\
           nVect.hpp\
           complex.h\
           complex.hpp\
-          basegate.h\
-          gatedata.cpp\
           gatedata.h\
           nTrix.h\
           nTrix.hpp\
@@ -55,18 +52,8 @@ driver.o: driver.cpp\
           kronecker.hpp
 	g++ -c driver.cpp
 
-qreg.o: qreg.cpp\
-        qreg.h\
-        nVect.h\
-        nVect.hpp\
-        complex.h\
-        complex.hpp\
-        basegate.h
-	g++ -c qreg.cpp
-
 gatedata.o: gatedata.cpp\
             gatedata.h\
-            basegate.h\
             complex.h\
             complex.hpp\
             nVect.h\
@@ -76,8 +63,3 @@ gatedata.o: gatedata.cpp\
             kronecker.h\
             kronecker.hpp
 	g++ -c gatedata.cpp
-
-# hadamard.o: hadamard.cpp\
-#             hadamard.h\
-#             gatedata.o
-# 	g++ -c hadamard.cpp

@@ -23,6 +23,15 @@ nTrix<T>::nTrix()
 template <typename T>
 nTrix<T>::nTrix(const std::initializer_list<std::initializer_list<T>>& grid)
 {
+	int temp_size = grid.begin() -> size();
+	for(auto r_itr = grid.begin(); r_itr != grid.end(); r_itr++)
+	{
+		if((*r_itr).size() != temp_size)
+		{
+			throw(std::domain_error(std::to_string(r_itr -> size())));
+		}
+	}
+
 	m_row = grid.size();
 	m_col = grid.begin() -> size();
 	m_matrix = new T*[m_row];
@@ -32,11 +41,6 @@ nTrix<T>::nTrix(const std::initializer_list<std::initializer_list<T>>& grid)
 
 	for(auto r_itr = grid.begin(); r_itr != grid.end(); r_itr++)
 	{
-		if(r_itr -> size() != m_col)
-		{
-			throw(std::domain_error(std::to_string(r_itr -> size())));
-		}
-
 		m_matrix[row_counter] = new T[m_col];
 
 		for(auto c_itr = r_itr -> begin(); c_itr != r_itr -> end(); c_itr++)
