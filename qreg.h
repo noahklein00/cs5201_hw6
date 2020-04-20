@@ -36,6 +36,7 @@ class qreg
                   */
 
   public:
+    // Essential //
 
     /*! \brief Default constructor
      *
@@ -66,6 +67,32 @@ class qreg
      */
     ~qreg();
 
+    /*! \brief copy constructor
+     *
+     * Description: Copy constructor for the qreg class that initializes a
+     * new qreg object with member variables equal to those passed. Except the
+     * measured state;
+     * \param rhs is the object to be copied.
+     * \post A qreg object is initialized with its member variables equal to
+     * the passed object, except the measured state is different because the
+     * user could use this to get around the probabalistic quantum measure.
+     */
+    qreg(const qreg& rhs);
+
+    /*! \brief = operator
+     *
+     * Description: = operator overload for the qreg class that sets the
+     * calling object equal to the  member variables of the object passed.
+     * Except the measured state;
+     * \param rhs is the object to be copied
+     * \post The calling object has its member variables set equal to
+     * the passed object, except the measured state is different because the
+     * user could use this to get around the probabalistic quantum measure.
+     */
+    qreg& operator=(const qreg& rhs);
+
+    // Mutators //
+
     /*! \brief Binary * operator
      *
      * Description: * operator overload that allows the multiplication of the
@@ -93,6 +120,8 @@ class qreg
     void apply(const std::initializer_list<int> a, const
       std::initializer_list<int> b, const gatedata& type);
 
+    // Friends //
+
     /*! \brief operator <<
      *
      * Description: Insertion operator overload for the qreg class that measures
@@ -107,6 +136,8 @@ class qreg
     template <int len>
     friend std::ostream& operator<<(std::ostream& out, qreg<len>& rhs);
 };
+
+// Extras //
 
 /*! \brief operator <<
  *

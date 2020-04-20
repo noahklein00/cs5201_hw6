@@ -46,6 +46,8 @@ class gatedata
                             */
   public:
 
+    // Essential //
+
     /*! \brief Default constructor
      *
      * Description: Default constructor for the gatedata class that defaults all
@@ -74,6 +76,27 @@ class gatedata
      * \post The object is safely destructed.
      */
     ~gatedata();
+
+    /*! \brief Copy constructor
+     *
+     * Description: Copy constructor for the gatedata class that initializes a
+     * gatedata object based on the object passed.
+     * \param rhs is the object to be copied.
+     * \post A new gatedata object is initialized with equal member variables
+     * as the object passed.
+     */
+    gatedata(const gatedata& rhs);
+
+    /*! \brief operator =
+     *
+     * Description: = operator overload for the gatedata class that sets the
+     * calling objects data equal to the object passed.
+     * \param rhs is the object to be copied.
+     * \post The calling objects data is set equal to the object passed.
+     */
+    gatedata& operator=(const gatedata& rhs);
+
+    // Mutators //
 
     /*! \brief Creation
      *

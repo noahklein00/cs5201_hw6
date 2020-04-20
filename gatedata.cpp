@@ -7,6 +7,8 @@
 
 #include "gatedata.h"
 
+//***************************** Essentials **********************************//
+
 gatedata::gatedata()
 {
   m_Pnot = new nTrix<cpf>({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(0,0)}});
@@ -35,6 +37,44 @@ gatedata::~gatedata()
   delete m_identity;
   delete m_gate;
 }
+
+gatedata::gatedata(const gatedata& rhs)
+{
+  m_Pnot = new nTrix<cpf>(*rhs.m_Pnot);
+  m_Pone = new nTrix<cpf>(*rhs.m_Pone);
+  m_identity = new nTrix<cpf>(*rhs.m_identity);
+  m_gate = new nTrix<cpf>(*rhs.m_gate);
+}
+
+gatedata& gatedata::operator=(const gatedata& rhs)
+{
+  if(m_Pnot)
+  {
+    delete m_Pnot;
+    m_Pnot = NULL;
+  }
+  if(m_Pone)
+  {
+    delete m_Pone;
+    m_Pone = NULL;
+  }
+  if(m_identity)
+  {
+    delete m_identity;
+    m_identity = NULL;
+  }
+  if(m_gate)
+  {
+    delete m_gate;
+    m_gate = NULL;
+  }
+  m_Pnot = new nTrix<cpf>(*rhs.m_Pnot);
+  m_Pone = new nTrix<cpf>(*rhs.m_Pone);
+  m_identity = new nTrix<cpf>(*rhs.m_identity);
+  m_gate = new nTrix<cpf>(*rhs.m_gate);
+}
+
+//***************************** Mutators ************************************//
 
 nTrix<cpf> gatedata::creation(const listy& a, const listy& b, const int size)
   const

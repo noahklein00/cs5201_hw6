@@ -5,6 +5,8 @@
 //              Computing
 // Filename   : qreg.hpp
 
+//***************************** Essentials **********************************//
+
 template <int size>
 qreg<size>::qreg()
 {
@@ -43,6 +45,32 @@ qreg<size>::~qreg()
 }
 
 template <int size>
+qreg<size>::qreg(const qreg& rhs)
+{
+  m_register = new nVect<cpf>(*rhs.m_register);
+  m_measured = (rand()%100000 + 1)/100000.00;
+  m_passed = rhs.m_passed;
+  m_state = rhs.m_state;
+}
+
+template <int size>
+qreg<size>& qreg<size>::operator=(const qreg& rhs)
+{
+  if(m_register)
+  {
+    delete m_register;
+    m_register = NULL;
+  }
+  m_register = new nVect<cpf>(*rhs.m_register);
+  m_measured = (rand()%100000 + 1)/100000.00;
+  m_passed = rhs.m_passed;
+  m_state = rhs.m_state;
+  return *this;
+}
+
+//***************************** Mutators ************************************//
+
+template <int size>
 void qreg<size>::operator*(const nTrix<cpf>& rhs)
 {
   if(m_passed)
@@ -64,6 +92,8 @@ void qreg<size>::apply(const std::initializer_list<int> a, const
   (*this) * type.creation(a,b,size);
   return;
 }
+
+//***************************** Friends *************************************//
 
 template <int size>
 std::ostream& operator<<(std::ostream& out, qreg<size>& rhs)

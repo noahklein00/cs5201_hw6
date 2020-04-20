@@ -379,10 +379,10 @@ nTrix<float> nTrix<T>::invert() const
 		std::cout << "Cannot invert non square matrix: ";
 		throw(std::range_error(std::to_string(this -> rows())));
 	}
-	nTrix<float> copy(*this);
+	nTrix<T> copy(*this);
 	float t = 1/((this -> infinity_norm()) * (this -> one_norm()));
-	nTrix<float> B = t * (this -> transpose());
-	nTrix<float> identity(this -> cols(), this -> cols());
+	nTrix<T> B = t * (this -> transpose());
+	nTrix<T> identity(this -> cols(), this -> cols());
 
 	for(int i = 0; i < identity.rows(); i++)
 	{
@@ -399,7 +399,7 @@ nTrix<float> nTrix<T>::invert() const
 		}
 	}
 
-	nTrix<float> E = identity - (B * *this);
+	nTrix<T> E = identity - (B * *this);
 
 	return r_invert(*this, B, E, identity, B.frobenius(), 0);
 }
