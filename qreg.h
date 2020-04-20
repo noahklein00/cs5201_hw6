@@ -110,7 +110,8 @@ class qreg
      * Description: Applies a gate to the register based on the gatedata object
      * passed along with the std::initializer_lists.
      * \param a is the list of bits the gate with apply to.
-     * \param b is the list of control bits for the creation of the gate.
+     * \param b is the list of control bits for the creation of the gate. If
+     * there are no control bits, send an empty list.
      * \param type is the gatedata object that stores all the information for
      * creating the gate.
      * \post The state has the created gate applied to it.
