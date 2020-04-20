@@ -9,15 +9,19 @@
 #ifndef GATEDATA_H
 #define GATEDATA_H
 
-#include "basegate.h"
 #include "nTrix.h"
 #include "kronecker.h"
+#include "complex.h"
+#include "nVect.h"
+
+#include <iostream>
 #include <algorithm>
 #include <numeric>
 
 typedef std::initializer_list<int> listy;
+typedef complex<float> cpf;
 
-class gatedata: public virtual basegate
+class gatedata
 {
   private:
     nTrix<cpf>* m_Pnot;
@@ -28,11 +32,12 @@ class gatedata: public virtual basegate
   public:
     gatedata();
     gatedata(const nTrix<cpf> base);
-    // gatedata(const listy& a, const listy& b, const int size, const
-    //   nTrix<cpf>& gate_type);
-    creation(const listy& a, const listy& b, const int size, const
-      nTrix<cpf>& gate_type);
-    virtual nVect<cpf> operator*(const nVect<cpf>& rhs) const;
+    ~gatedata();
+    nTrix<cpf> creation(const listy& a, const listy& b, const int size) const;
+    nVect<cpf> operator*(const nVect<cpf>& rhs) const;
+
 };
+
+//std::ostream& operator<<(const std::ostream& out, const gatedata rhs);
 
 #endif
