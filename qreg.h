@@ -89,7 +89,7 @@ class qreg
      * the passed object, except the measured state is different because the
      * user could use this to get around the probabalistic quantum measure.
      */
-    qreg& operator=(const qreg& rhs);
+    qreg<size>& operator=(const qreg& rhs);
 
     // Mutators //
 
