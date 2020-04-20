@@ -164,7 +164,7 @@ void nVect<T>::push_back(const T & item)
 template <typename T>
 void nVect<T>::push_front(const T & item)
 {
-	T* temp_arr;
+	T* temp_arr =  NULL;
 	if(m_available == 0)
 	{
 		if(m_arr)

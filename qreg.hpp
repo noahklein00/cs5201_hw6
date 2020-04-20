@@ -5,7 +5,7 @@
 //              Computing
 // Filename   : qreg.cpp
 
-#include "qreg.h"
+//#include "qreg.h"
 
 template <int size>
 qreg<size>::qreg()
@@ -34,7 +34,13 @@ qreg<size>::qreg(nVect<complex<float>>& copy)
 }
 
 template <int size>
-void qreg<size>::operator*(const basegate& rhs)
+qreg<size>::~qreg()
+{
+  delete m_register;
+}
+
+template <int size>
+void qreg<size>::operator*(const nTrix<cpf>& rhs)
 {
   if(!m_passed)
   {
@@ -48,10 +54,11 @@ void qreg<size>::operator*(const basegate& rhs)
 }
 
 template <int size>
-qreg<size>::apply(const std::initializer_list<int> a, const std::initializer_list b,
-  const gatedata& type)
+void qreg<size>::apply(const std::initializer_list<int> a, const
+  std::initializer_list<int> b, const gatedata& type)
 {
-  
+  (*this) * type.creation(a,b,size);
+  return;
 }
 
 template <int size>
@@ -82,7 +89,6 @@ std::ostream& operator<<(std::ostream& out, qreg<size>& rhs)
   }
   out << std::endl << "Measured State: ";
   int binaryNum[size] = {0};
-  std::cout << "size: " << size << std::endl;
   int i = 0;
   while(rhs.m_state > 0)
   {

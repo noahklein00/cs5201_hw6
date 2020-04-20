@@ -8,9 +8,12 @@
 
 #ifndef QREG_H
 #define QREG_H
+
 #include "nVect.h"
 #include "complex.h"
-#include "basegate.h"
+#include "gatedata.h"
+#include "nTrix.h"
+#include "kronecker.h"
 
 template <int size>
 class qreg
@@ -24,9 +27,10 @@ class qreg
   public:
     qreg();
     qreg(nVect<complex<float>>& copy);
-    void operator*(const basegate& rhs);
-    apply(const std::initializer_list<int> a, const std::initializer_list b, \
-      const gatedata& type);
+    ~qreg();
+    void operator*(const nTrix<cpf>& rhs);
+    void apply(const std::initializer_list<int> a, const std::initializer_list<int>
+      b, const gatedata& type);
 
     template <int len>
     friend std::ostream& operator<<(std::ostream& out, qreg<len>& rhs);
@@ -35,4 +39,5 @@ class qreg
 template <int size>
 std::ostream& operator<<(std::ostream& out, qreg<size>& rhs);
 
+#include "qreg.hpp"
 #endif
