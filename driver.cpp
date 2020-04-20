@@ -7,17 +7,27 @@
 
 int main()
 {
+  //I see that there is a lot of cool inheritance/polymorphism that can be done
+  //with this. I could not figure out a worthwhile way to implement it for my
+  //method of calculating the gates.
+  //I could not figure out any other way to do this. :(
   try
   {
-    double rt = 1.414213562;
+    double RT = 1.414213562;
     qreg<3> grover_reg;
     qreg<3> shor_reg;
-    gatedata H(nTrix<cpf>({{cpf(1/rt,0),cpf(1/rt,0)},{cpf(1/rt,0),cpf(-1/rt,0)}}));
+    gatedata H(nTrix<cpf>({{cpf(1/RT,0),cpf(1/RT,0)},{cpf(1/RT,0),
+      cpf(-1/RT,0)}})); //Hadamard gate
     gatedata X(nTrix<cpf>({{cpf(0,0),cpf(1,0)},{cpf(1,0),cpf(0,0)}}));
+      //NOT gate
     gatedata Z(nTrix<cpf>({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(-1,0)}}));
+      //Z gate
     gatedata S(nTrix<cpf>({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(0,1)}}));
-    gatedata T(nTrix<cpf>({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(rt/2,rt/2)}}));
+      //S gate
+    gatedata T(nTrix<cpf>({{cpf(1,0),cpf(0,0)},{cpf(0,0),cpf(RT/2,RT/2)}}));
+      //T gate
 
+    //applies the different gates to the register to build the grover circuit
     grover_reg.apply({0,1,2},{},H);
     grover_reg.apply({0},{2},Z);;
     grover_reg.apply({0},{1},Z);
@@ -29,6 +39,7 @@ int main()
 
     std::cout << grover_reg << std::endl;
 
+    //applies the different gates to the register to build the shor's circuit
     shor_reg.apply({0,1,2},{},H);
     shor_reg.apply({1},{},H);
     shor_reg.apply({0},{1},S);

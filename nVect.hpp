@@ -1,7 +1,8 @@
 // Programmer : Noah Klein
 // Instructor : Price
 // Class      : CS5201 Spring 2020
-// Assignment : Homework 5 - Matrices, Filters, and Guidance
+// Assignment : Homework 6 - Complex Numbers, Outer Products, and Quantum
+//              Computing
 // Filename   : nVect.hpp
 
 template <typename T>
