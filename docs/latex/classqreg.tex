@@ -1,0 +1,226 @@
+\hypertarget{classqreg}{}\section{qreg$<$ size $>$ Class Template Reference}
+\label{classqreg}\index{qreg$<$ size $>$@{qreg$<$ size $>$}}
+
+
+qreg class.  
+
+
+
+
+{\ttfamily \#include $<$qreg.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classqreg_af90cf81369c4ec6058038497f7a1c870}{qreg} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classqreg_ae08c9f05247bf65c36bd8301dbcae423}{qreg} (\hyperlink{classnVect}{n\+Vect}$<$ \hyperlink{classcomplex}{complex}$<$ float $>$$>$ \&copy)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\hyperlink{classqreg_a61323454f297a9bb149febf889d54914}{$\sim$qreg} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classqreg_afbb6aeb20d3e963cebd5d8063221b872}{qreg} (const \hyperlink{classqreg}{qreg} \&rhs)
+\begin{DoxyCompactList}\small\item\em copy constructor \end{DoxyCompactList}\item 
+\hyperlink{classqreg}{qreg}$<$ size $>$ \& \hyperlink{classqreg_a677e4810f14987e619b6b5c9a6a75b4c}{operator=} (const \hyperlink{classqreg}{qreg} \&rhs)
+\begin{DoxyCompactList}\small\item\em = operator \end{DoxyCompactList}\item 
+void \hyperlink{classqreg_abb87cb06dc40f43592943c1c72630269}{operator$\ast$} (const \hyperlink{classnTrix}{n\+Trix}$<$ \hyperlink{gatedata_8h_a0c9667bfe3ded0fa2cd4fab281edbe24}{cpf} $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Binary $\ast$ operator. \end{DoxyCompactList}\item 
+void \hyperlink{classqreg_ae27e91433cfd5c80b02d2fded7f987d2}{apply} (const std\+::initializer\+\_\+list$<$ int $>$ a, const std\+::initializer\+\_\+list$<$ int $>$ b, const \hyperlink{classgatedata}{gatedata} \&type)
+\begin{DoxyCompactList}\small\item\em gate apply \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$int len$>$ }\\std\+::ostream \& \hyperlink{classqreg_aab37e2039c27c6a674f5319cb72b0a6f}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classqreg}{qreg}$<$ len $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$int size$>$\newline
+class qreg$<$ size $>$}
+
+qreg class. 
+
+This class represents a quantum register by storing \hyperlink{classcomplex}{complex$<$float$>$}s to hold the information for a simulation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqreg_af90cf81369c4ec6058038497f7a1c870}\label{classqreg_af90cf81369c4ec6058038497f7a1c870}} 
+\index{qreg@{qreg}!qreg@{qreg}}
+\index{qreg@{qreg}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{qreg()}{qreg()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+\hyperlink{classqreg}{qreg}$<$ size $>$\+::\hyperlink{classqreg}{qreg} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+Description\+: The default constructor for the qreg class that initializes all the member variables and creates a \hyperlink{classnVect}{n\+Vect} based off of the size of the template parameter. \begin{DoxyPostcond}{Postcondition}
+A qreg object is initialized with all its member variables. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classqreg_ae08c9f05247bf65c36bd8301dbcae423}\label{classqreg_ae08c9f05247bf65c36bd8301dbcae423}} 
+\index{qreg@{qreg}!qreg@{qreg}}
+\index{qreg@{qreg}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{qreg()}{qreg()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+\hyperlink{classqreg}{qreg}$<$ size $>$\+::\hyperlink{classqreg}{qreg} (\begin{DoxyParamCaption}\item[{\hyperlink{classnVect}{n\+Vect}$<$ \hyperlink{classcomplex}{complex}$<$ float $>$$>$ \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+Description\+: Parameterized constructor for the qreg class that accepts a \hyperlink{classnVect}{n\+Vect}$<$\hyperlink{classcomplex}{complex$<$float$>$}$>$ object that already holds information on a state. 
+\begin{DoxyParams}{Parameters}
+{\em copy} & is the \hyperlink{classnVect}{n\+Vect} object that holds the already created state. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+A qreg object is initialized with all its member variables and m\+\_\+register set equal to the \hyperlink{classnVect}{n\+Vect} passed. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a std\+::domain\+\_\+error object if the passed vector is the incorrect size. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqreg_a61323454f297a9bb149febf889d54914}\label{classqreg_a61323454f297a9bb149febf889d54914}} 
+\index{qreg@{qreg}!````~qreg@{$\sim$qreg}}
+\index{````~qreg@{$\sim$qreg}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{$\sim$qreg()}{~qreg()}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+\hyperlink{classqreg}{qreg}$<$ size $>$\+::$\sim$\hyperlink{classqreg}{qreg} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+Description\+: Destructor for the qreg class that safely deallocates memory. \begin{DoxyPostcond}{Postcondition}
+The object is safely destructed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classqreg_afbb6aeb20d3e963cebd5d8063221b872}\label{classqreg_afbb6aeb20d3e963cebd5d8063221b872}} 
+\index{qreg@{qreg}!qreg@{qreg}}
+\index{qreg@{qreg}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{qreg()}{qreg()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+\hyperlink{classqreg}{qreg}$<$ size $>$\+::\hyperlink{classqreg}{qreg} (\begin{DoxyParamCaption}\item[{const \hyperlink{classqreg}{qreg}$<$ size $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+copy constructor 
+
+Description\+: Copy constructor for the qreg class that initializes a new qreg object with member variables equal to those passed. Except the measured state; 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the object to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+A qreg object is initialized with its member variables equal to the passed object, except the measured state is different because the user could use this to get around the probabalistic quantum measure. 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classqreg_ae27e91433cfd5c80b02d2fded7f987d2}\label{classqreg_ae27e91433cfd5c80b02d2fded7f987d2}} 
+\index{qreg@{qreg}!apply@{apply}}
+\index{apply@{apply}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+void \hyperlink{classqreg}{qreg}$<$ size $>$\+::apply (\begin{DoxyParamCaption}\item[{const std\+::initializer\+\_\+list$<$ int $>$}]{a,  }\item[{const std\+::initializer\+\_\+list$<$ int $>$}]{b,  }\item[{const \hyperlink{classgatedata}{gatedata} \&}]{type }\end{DoxyParamCaption})}
+
+
+
+gate apply 
+
+Description\+: Applies a gate to the register based on the gatedata object passed along with the std\+::initializer\+\_\+lists. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the list of bits the gate with apply to. \\
+\hline
+{\em b} & is the list of control bits for the creation of the gate. \\
+\hline
+{\em type} & is the gatedata object that stores all the information for creating the gate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The state has the created gate applied to it. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a std\+::range\+\_\+error object if the system has already been measured. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqreg_abb87cb06dc40f43592943c1c72630269}\label{classqreg_abb87cb06dc40f43592943c1c72630269}} 
+\index{qreg@{qreg}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+void \hyperlink{classqreg}{qreg}$<$ size $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classnTrix}{n\+Trix}$<$ \hyperlink{gatedata_8h_a0c9667bfe3ded0fa2cd4fab281edbe24}{cpf} $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Binary $\ast$ operator. 
+
+Description\+: $\ast$ operator overload that allows the multiplication of the register to a \char`\"{}quantum gate\char`\"{} which updates the state in the process. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the \char`\"{}gate\char`\"{} to multiply the system to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+binary $\ast$ operator needs to be defined for the complex class. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The state is advanced forward as if the gate had been applied. 
+\end{DoxyPostcond}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Throws} & a std\+::range\+\_\+error object if the system has already been measured. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classqreg_a677e4810f14987e619b6b5c9a6a75b4c}\label{classqreg_a677e4810f14987e619b6b5c9a6a75b4c}} 
+\index{qreg@{qreg}!operator=@{operator=}}
+\index{operator=@{operator=}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+\hyperlink{classqreg}{qreg}$<$ size $>$ \& \hyperlink{classqreg}{qreg}$<$ size $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classqreg}{qreg}$<$ size $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+= operator 
+
+Description\+: = operator overload for the qreg class that sets the calling object equal to the member variables of the object passed. Except the measured state; 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the object to be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+The calling object has its member variables set equal to the passed object, except the measured state is different because the user could use this to get around the probabalistic quantum measure. 
+\end{DoxyPostcond}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classqreg_aab37e2039c27c6a674f5319cb72b0a6f}\label{classqreg_aab37e2039c27c6a674f5319cb72b0a6f}} 
+\index{qreg@{qreg}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!qreg@{qreg}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+template$<$int len$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classqreg}{qreg}$<$ len $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+operator $<$$<$ 
+
+Description\+: Insertion operator overload for the qreg class that measures the state of the system and outputs it in the proper format. 
+\begin{DoxyParams}{Parameters}
+{\em out} & is the ostream object. \\
+\hline
+{\em rhs} & is the qreg object to be output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+If the probability of a state is less than .00001, this is interpreted as 0 to assist with floating point error. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The state is measured and output accordingly. If the system is measured again it will output the same information. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{qreg_8h}{qreg.\+h}\item 
+qreg.\+hpp\end{DoxyCompactItemize}

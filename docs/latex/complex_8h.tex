@@ -1,0 +1,66 @@
+\hypertarget{complex_8h}{}\section{complex.\+h File Reference}
+\label{complex_8h}\index{complex.\+h@{complex.\+h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}complex.\+hpp\char`\"{}}\newline
+Include dependency graph for complex.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{complex_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{complex_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcomplex}{complex$<$ T $>$}
+\begin{DoxyCompactList}\small\item\em complex class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \hyperlink{complex_8h_a7509b022f22e83b83303658565a038af}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Insertion operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definitions for the complex class. ~\newline
+Programmer\+: Noah Klein ~\newline
+Class\+: C\+S5201 ~\newline
+Assignment\+: Homework 6 ~\newline
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{complex_8h_a7509b022f22e83b83303658565a038af}\label{complex_8h_a7509b022f22e83b83303658565a038af}} 
+\index{complex.\+h@{complex.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!complex.\+h@{complex.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Insertion operator. 
+
+Description\+: Insertion operator overload for the complex class that prints the object in the proper format. 
+\begin{DoxyParams}{Parameters}
+{\em out} & is the ostream passed to the function. \\
+\hline
+{\em rhs} & is the complex object to be output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the ostream object. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+$<$$<$ operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The complex object is output to the stream. 
+\end{DoxyPostcond}

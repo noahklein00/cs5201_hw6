@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://jberm6.git-pages.mst.edu/essman/homework/hw6/ -->
+<html lang="en-us"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Homework 6 - Complex Numbers, Outer Products, and Quantum Computing | CS 5201 - Josh Essman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Due on 2020-04-20">
+  <meta name="author" content="">
+  <meta content="index, follow" name="robots">
+  <meta name="generator" content="Hugo 0.69.2">
+  <link href="https://jberm6.git-pages.mst.edu/essman/index.xml" rel="alternate" type="application/rss+xml" title="CS 5201 - Josh Essman Feed">
+  <link rel="shortcut icon" href="https://jberm6.git-pages.mst.edu/essmanfavicon.ico" type="image/x-icon">
+  <!--[if lte IE 8]>
+  <link rel="stylesheet" href="/essman/style-compat.18854265a818d0eba8e44a33b636016343ee1980cb37565042864f57e53a611c.css" />
+  <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/style.730b32910bfb669086b30a9d93000643f054cd3254e0fb3e53ac901d89098fa0.css">
+  <!--<![endif]-->
+  <script defer="" src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/script.9df38729991a6ec08d83b60514e841529cebd5ccc800cf8e1f98fb63e73aaa73.js.download"></script>
+  <script type="text/javascript" src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/MathJax.js.download">
+</script>
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+
+
+<style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">.MathJax_Display {text-align: center; margin: 1em 0em; position: relative; display: block!important; text-indent: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; width: 100%}
+.MathJax .merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MathJax .MJX-monospace {font-family: monospace}
+.MathJax .MJX-sans-serif {font-family: sans-serif}
+#MathJax_Tooltip {background-color: InfoBackground; color: InfoText; border: 1px solid black; box-shadow: 2px 2px 5px #AAAAAA; -webkit-box-shadow: 2px 2px 5px #AAAAAA; -moz-box-shadow: 2px 2px 5px #AAAAAA; -khtml-box-shadow: 2px 2px 5px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true'); padding: 3px 4px; z-index: 401; position: absolute; left: 0; top: 0; width: auto; height: auto; display: none}
+.MathJax {display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; font-size-adjust: none; text-indent: 0; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0; min-height: 0; border: 0; padding: 0; margin: 0}
+.MathJax:focus, body :focus .MathJax {display: inline-table}
+.MathJax.MathJax_FullWidth {text-align: center; display: table-cell!important; width: 10000em!important}
+.MathJax img, .MathJax nobr, .MathJax a {border: 0; padding: 0; margin: 0; max-width: none; max-height: none; min-width: 0; min-height: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+img.MathJax_strut {border: 0!important; padding: 0!important; margin: 0!important; vertical-align: 0!important}
+.MathJax span {display: inline; position: static; border: 0; padding: 0; margin: 0; vertical-align: 0; line-height: normal; text-decoration: none}
+.MathJax nobr {white-space: nowrap!important}
+.MathJax img {display: inline!important; float: none!important}
+.MathJax * {transition: none; -webkit-transition: none; -moz-transition: none; -ms-transition: none; -o-transition: none}
+.MathJax_Processing {visibility: hidden; position: fixed; width: 0; height: 0; overflow: hidden}
+.MathJax_Processed {display: none!important}
+.MathJax_ExBox {display: block!important; overflow: hidden; width: 1px; height: 60ex; min-height: 0; max-height: none}
+.MathJax .MathJax_EmBox {display: block!important; overflow: hidden; width: 1px; height: 60em; min-height: 0; max-height: none}
+.MathJax_LineBox {display: table!important}
+.MathJax_LineBox span {display: table-cell!important; width: 10000em!important; min-width: 0; max-width: none; padding: 0; border: 0; margin: 0}
+.MathJax .MathJax_HitBox {cursor: text; background: white; opacity: 0; filter: alpha(opacity=0)}
+.MathJax .MathJax_HitBox * {filter: none; opacity: 1; background: transparent}
+#MathJax_Tooltip * {filter: none; opacity: 1; background: transparent}
+@font-face {font-family: MathJax_Main; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-bold; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Bold.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Bold.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Main-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Main-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Main-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Math-italic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Math-Italic.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Math-Italic.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Caligraphic; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Caligraphic-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Caligraphic-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size1; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size1-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size1-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size2; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size2-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size2-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size3; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size3-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size3-Regular.otf?V=2.7.1') format('opentype')}
+@font-face {font-family: MathJax_Size4; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_Size4-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_Size4-Regular.otf?V=2.7.1') format('opentype')}
+.MathJax .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><style type="text/css">@font-face {font-family: MathJax_AMS; src: url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/woff/MathJax_AMS-Regular.woff?V=2.7.1') format('woff'), url('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/fonts/HTML-CSS/TeX/otf/MathJax_AMS-Regular.otf?V=2.7.1') format('opentype')}
+</style></head>
+<body><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_Hidden"></div></div><div id="MathJax_Message" style="display: none;"></div>
+<div class="pure-g">
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+  <div class="pure-u-22-24 pure-u-md-14-24">
+  
+<div class="navigation">
+  <div class="navigation-header clearfix">
+    <div class="pure-menu pure-menu-horizontal">
+      <a class="pure-menu-heading pure-menu-link" href="https://jberm6.git-pages.mst.edu/essman/">
+        CS 5201 - Josh Essman
+      </a>
+    </div>
+  </div>
+  <div class="navigation-content">
+    <div class="pure-menu pure-menu-horizontal">
+      <ul class="pure-menu-list">
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jberm6.git-pages.mst.edu/essman/">Home</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jberm6.git-pages.mst.edu/essman/homework/">Homeworks</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jberm6.git-pages.mst.edu/essman/lectures/">Lectures</a>
+        </li>
+        <li class="pure-menu-item">
+          <a class="pure-menu-link" href="https://jberm6.git-pages.mst.edu/essman/resource/">Resources</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  
+<div>
+  <div>
+    <h2 class="post-title">
+      
+      Homework 6 - Complex Numbers, Outer Products, and Quantum Computing
+    </h2>
+    
+
+  </div>
+  <div>
+    <h4 id="due-on-2020-04-20-at-class-time">Due on 2020-04-20 at class time</h4>
+<h3 id="purpose">Purpose</h3>
+<p>The purpose of this assignment is to simulate a quantum computer by applying
+an object-oriented approach to the representation of quantum operators (gates).
+To achieve this you will apply your knowledge of the following:</p>
+<ul>
+<li>Outer products</li>
+<li>Complex numbers</li>
+<li>Probability distributions</li>
+<li>The “reduce” idiom</li>
+<li>Templated functions and objects</li>
+<li>Operator overloading</li>
+<li>Interactions between objects of differing classes</li>
+</ul>
+<h3 id="background">Background</h3>
+<p>This assignment focuses on the simulation of a quantum computer and its application
+to the problem of function inversion, i.e. for some <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-1-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-1" style="width: 4.188em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.742em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.509em, 1003.63em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-2"><span class="mi" id="MathJax-Span-3" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span><span class="mo" id="MathJax-Span-4" style="font-family: MathJax_Main; padding-left: 0.282em;">=</span><span class="mi" id="MathJax-Span-5" style="font-family: MathJax_Math-italic; padding-left: 0.282em;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.059em;"></span></span><span class="mo" id="MathJax-Span-6" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-7" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-8" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-1"> y = f(x) </script>, finding
+the value of <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-2-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-9" style="width: 0.617em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.561em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.789em, 1000.5em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-10"><span class="mi" id="MathJax-Span-11" style="font-family: MathJax_Math-italic;">x</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.628em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math></span></span><script type="math/tex" id="MathJax-Element-2">x</script> that produces <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-3-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-12" style="width: 0.561em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.505em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.789em, 1000.5em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-13"><span class="mi" id="MathJax-Span-14" style="font-family: MathJax_Math-italic;">y<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.003em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi></math></span></span><script type="math/tex" id="MathJax-Element-3">y</script>.  With a classical computer it is clear
+that bruteforcing this requires <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-4-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-15" style="width: 1.007em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.896em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1000.9em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-16"><span class="mi" id="MathJax-Span-17" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.114em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-4">N</script> evaluations of <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-5-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-18" style="width: 0.617em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.561em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.509em, 1000.56em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-19"><span class="mi" id="MathJax-Span-20" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.059em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi></math></span></span><script type="math/tex" id="MathJax-Element-5">f</script>, where <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-6-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-21" style="width: 1.007em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.896em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1000.9em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-22"><span class="mi" id="MathJax-Span-23" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.114em;"></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi></math></span></span><script type="math/tex" id="MathJax-Element-6">N</script> is the cardinality
+of the function’s domain.  Quantum computing, and in particular the amplitude
+magnification enabled by Grover’s algorithm, allows for the function to be
+inverted in <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-7-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msqrt&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/msqrt&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-24" style="width: 3.853em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.407em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.398em, 1003.29em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-25"><span class="mi" id="MathJax-Span-26" style="font-family: MathJax_Math-italic;">O</span><span class="mo" id="MathJax-Span-27" style="font-family: MathJax_Main;">(</span><span class="msqrt" id="MathJax-Span-28"><span style="display: inline-block; position: relative; width: 1.844em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1000.9em, 4.188em, -999.997em); top: -4.015em; left: 0.84em;"><span class="mrow" id="MathJax-Span-29"><span class="mi" id="MathJax-Span-30" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.114em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; clip: rect(3.574em, 1001.01em, 3.965em, -999.997em); top: -4.573em; left: 0.84em;"><span style="display: inline-block; position: relative; width: 1.007em; height: 0px;"><span style="position: absolute; font-family: MathJax_Main; top: -4.015em; left: -0.109em;">−<span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; font-family: MathJax_Main; top: -4.015em; left: 0.282em;">−<span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; clip: rect(3.072em, 1000.84em, 4.411em, -999.997em); top: -4.071em; left: 0em;"><span style="font-family: MathJax_Main;">√</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span><span class="mo" id="MathJax-Span-31" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.378em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>O</mi><mo stretchy="false">(</mo><msqrt><mi>N</mi></msqrt><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-7">O(\sqrt{N})</script> time.</p>
+<p>This assignment also involves the simulation of the period finding section of
+Shor’s algorithm for integer factorization.  You will be finding the
+Your simulation of a quantum computer will be comprised of quantum gates,
+which are not dissimilar to the logic gates you’ve seen before.</p>
+<h3 id="program-specification">Program Specification</h3>
+<p>You are responsible for implementing a templated outer product - specifically, the
+<a href="http://mathworld.wolfram.com/KroneckerProduct.html">Kronecker product</a>.
+This class (or function) should overload its function evaluation operator to accept two
+matrices <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-8-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;M&lt;/mi&gt;&lt;mn mathvariant=&quot;bold&quot;&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-32" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1001.57em, 2.737em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-33"><span class="texatom" id="MathJax-Span-34"><span class="mrow" id="MathJax-Span-35"><span class="msubsup" id="MathJax-Span-36"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1001.06em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mi" id="MathJax-Span-37" style="font-family: MathJax_Main-bold;">M</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -3.848em; left: 1.119em;"><span class="mn" id="MathJax-Span-38" style="font-size: 70.7%; font-family: MathJax_Main-bold;">1</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.066em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">1</mn></msub></mrow></math></span></span><script type="math/tex" id="MathJax-Element-8">\mathbf{M_1}</script>, <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-9-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;M&lt;/mi&gt;&lt;mn mathvariant=&quot;bold&quot;&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-39" style="width: 1.789em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1001.57em, 2.737em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-40"><span class="texatom" id="MathJax-Span-41"><span class="mrow" id="MathJax-Span-42"><span class="msubsup" id="MathJax-Span-43"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1001.06em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mi" id="MathJax-Span-44" style="font-family: MathJax_Main-bold;">M</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -3.848em; left: 1.119em;"><span class="mn" id="MathJax-Span-45" style="font-size: 70.7%; font-family: MathJax_Main-bold;">2</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.066em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">2</mn></msub></mrow></math></span></span><script type="math/tex" id="MathJax-Element-9">\mathbf{M_2}</script>
+and should return a single matrix: <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-10-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;M&lt;/mi&gt;&lt;mn mathvariant=&quot;bold&quot;&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;mo&gt;&amp;#x2297;&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;msub&gt;&lt;mi mathvariant=&quot;bold&quot;&gt;M&lt;/mi&gt;&lt;mn mathvariant=&quot;bold&quot;&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-46" style="width: 4.914em; display: inline-block;"><span style="display: inline-block; position: relative; width: 4.355em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1004.36em, 2.737em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-47"><span class="texatom" id="MathJax-Span-48"><span class="mrow" id="MathJax-Span-49"><span class="msubsup" id="MathJax-Span-50"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1001.06em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mi" id="MathJax-Span-51" style="font-family: MathJax_Main-bold;">M</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -3.848em; left: 1.119em;"><span class="mn" id="MathJax-Span-52" style="font-size: 70.7%; font-family: MathJax_Main-bold;">1</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span></span></span><span class="mo" id="MathJax-Span-53" style="font-family: MathJax_Main; padding-left: 0.226em;">⊗</span><span class="texatom" id="MathJax-Span-54" style="padding-left: 0.226em;"><span class="mrow" id="MathJax-Span-55"><span class="msubsup" id="MathJax-Span-56"><span style="display: inline-block; position: relative; width: 1.565em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1001.06em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mi" id="MathJax-Span-57" style="font-family: MathJax_Main-bold;">M</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -3.848em; left: 1.119em;"><span class="mn" id="MathJax-Span-58" style="font-size: 70.7%; font-family: MathJax_Main-bold;">2</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.247em; border-left: 0px solid; width: 0px; height: 1.066em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mrow class="MJX-TeXAtom-ORD"><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">1</mn></msub></mrow><mo>⊗</mo><mrow class="MJX-TeXAtom-ORD"><msub><mi mathvariant="bold">M</mi><mn mathvariant="bold">2</mn></msub></mrow></math></span></span><script type="math/tex" id="MathJax-Element-10">\mathbf{M_1} \otimes \mathbf{M_2}</script> such
+that it is compatible with <code>std::accumulate</code>, called using iterators to one of
+<em>your vectors</em> of <em>your matrices</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">YourVector<span style="color:#f92672">&lt;</span>YourMatrix<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;&gt;</span> list_of_operators;
+<span style="color:#66d9ef">auto</span> composed_operator <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>accumulate(std<span style="color:#f92672">::</span>begin(list_of_operators),
+        std<span style="color:#f92672">::</span>end(list_of_operators), YourMatrix<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>({<span style="color:#ae81ff">1</span>}), YourKronecker<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span>());
+</code></pre></div><p>You will likely find <code>std::accumulate</code> to
+be useful in the context of this assignment.</p>
+<p>You will also implement a templated complex number class, which should implement
+the following:</p>
+<ul>
+<li>Appropriate constructors and destructors</li>
+<li>copy assignment</li>
+<li><code>real</code> and <code>imag</code> functions to return the real and imaginary parts of the
+complex number, respectively</li>
+<li>stream operator (<code>&lt;&lt;</code>) to output a complex number - should be of the format <code>a + bi</code>,
+unless <code>a</code> or <code>b</code> is zero, in which case only <code>bi</code> or <code>a</code> should be displayed, respectively</li>
+<li>overloaded unary <code>-</code> operator to return the additive inverse (of the real part, the imaginary part should be unchanged)</li>
+<li>overloaded unary <code>!</code> operator to return the complex conjugate</li>
+<li>overloaded unary <code>~</code> operator to return the magnitude (recall that complex numbers are isomorphic to vectors in <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-11-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;double-struck&quot;&gt;R&lt;/mi&gt;&lt;/mrow&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-59" style="width: 1.342em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.175em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.342em, 1001.17em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-60"><span class="msubsup" id="MathJax-Span-61"><span style="display: inline-block; position: relative; width: 1.175em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1000.73em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="texatom" id="MathJax-Span-62"><span class="mrow" id="MathJax-Span-63"><span class="mi" id="MathJax-Span-64" style="font-family: MathJax_AMS;">R</span></span></span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -4.406em; left: 0.728em;"><span class="mn" id="MathJax-Span-65" style="font-size: 70.7%; font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 1.128em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="double-struck">R</mi></mrow><mn>2</mn></msup></math></span></span><script type="math/tex" id="MathJax-Element-11">\mathbb{R}^2</script>)</li>
+<li>operators <code>+</code>, <code>-</code>, <code>*</code>, <em>and their assignment counterparts</em></li>
+</ul>
+<p>You should not use <code>std::complex</code> to implement this class. All arithmetic operations
+on this complex class should return new complex numbers.</p>
+<p>You should also implement a quantum register class, which should be templated
+on the <em>number of qubits</em>.  Note the use of a non-type template parameter and thus that
+the size of the register is known at compile time.
+Like a classical register, a quantum register stores the state of a
+set of bits - the only difference is that the bits are quantum in nature (i.e. qubits).
+What I’m looking to see in your code:</p>
+<ul>
+<li>Encapsulation of quantum state for an arbitrary number of bits, using the format(s) discussed in lecture</li>
+<li>A measurement operation that implements a weighted random choice, where the weights are the probabilities
+of potential discrete register states</li>
+<li>An interface of your choice to allow for the application of gate(s), both “regular” and controlled, to the internal
+state of the register</li>
+</ul>
+<p>In addition to appropriate constructors and destructors, your register
+should implement the <code>&lt;&lt;</code> stream operator to measure and output the state of the
+system, which should be (on separate, labeled lines) the list of probabilities (in order from <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-12-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-66" style="width: 0.561em; display: inline-block;"><span style="display: inline-block; position: relative; width: 0.505em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1000.45em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-67"><span class="mn" id="MathJax-Span-68" style="font-family: MathJax_Main;">0</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn></math></span></span><script type="math/tex" id="MathJax-Element-12">0</script> to <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-13-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;&amp;#x2212;&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-69" style="width: 3.072em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.737em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.509em, 1002.68em, 2.626em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-70"><span class="msubsup" id="MathJax-Span-71"><span style="display: inline-block; position: relative; width: 1.007em; height: 0px;"><span style="position: absolute; clip: rect(3.184em, 1000.45em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mn" id="MathJax-Span-72" style="font-family: MathJax_Main;">2</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -4.406em; left: 0.505em;"><span class="mi" id="MathJax-Span-73" style="font-size: 70.7%; font-family: MathJax_Math-italic;">n</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span><span class="mo" id="MathJax-Span-74" style="font-family: MathJax_Main; padding-left: 0.226em;">−</span><span class="mn" id="MathJax-Span-75" style="font-family: MathJax_Main; padding-left: 0.226em;">1</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.122em; border-left: 0px solid; width: 0px; height: 1.003em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></math></span></span><script type="math/tex" id="MathJax-Element-13">2^n - 1</script>), and
+a space-separated binary string of 1s and 0s representing the measured state, with the most significant bit on the <strong>left</strong>.<br>
+For example, a qubit in the zero state must have the following output:</p>
+<pre><code>Probabilities: 1 0
+Measured State: 0
+</code></pre><p>Similarly, if the following circuit is simulated:
+<img src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/single_gate_appl.png" alt="inv_0" class="pure-img">
+The following output would be desired (the measured state will vary):</p>
+<pre><code>Probabilities: 0.5 0 0.5 0
+Measured State: 1 0
+</code></pre><p>Note that since measurement “collapses” the quantum system into a classical system, you should
+not allow the user to apply any quantum gates after measurement.  Subsequent
+attempts by the user to measure the system should return the same result as the
+initial (“real”) measurement.</p>
+<p>When measuring the state of a quantum register, you should use appropriate
+C++ random number utilities to simulate nondeterministic quantum behavior, i.e.,
+to make a <em>weighted random choice</em> of one of the possible output states
+according to the register’s probability distribution.</p>
+<p>The last set of classes you will implement are for the gates themselves.
+The object-oriented design decisions you make when implementing these classes
+should take into account the existence of controlled gates, which are by
+definition implemented in terms of more basic gates.<br>
+For example, a controlled not (CNOT) gate is implemented in terms of a NOT gate,
+and a controlled controlled not with two control bits (CCNOT) is implemented
+in terms of a CNOT gate.
+Also consider the usefulness of inheritance and polymorphism when implementing your gates.<br>
+What I’m looking to see in your code:</p>
+<ul>
+<li>Encapsulation of unitary operators, represented as matrices</li>
+<li>Functionality that implements the linear algebra techniques used in lecture to
+compose gates and also to create controlled gates (you may delegate this to your
+quantum register class if you wish)</li>
+</ul>
+<p>Controlled gates must support <em>at least</em> one and two control bit configurations (the minimum required to
+implement the circuits displayed below).  To help you implement controlled gates,
+I have gone through <a href="https://jberm6.git-pages.mst.edu/essman/hw6/another_example.jpg">another example</a>.</p>
+<p>In addition to whatever appropriate constructors you find necessary, you should
+ensure that your gate class(es) include a constructor that accepts a matrix representation of a gate.</p>
+<p>Neither your gates nor your quantum registers must support arbitrary (templated) internal
+state representations - you may assume floating-point scalar instantiations of your complex number class.</p>
+<p>You must configure your gates and registers such that gates can be applied to
+individual qubits in a register.  This “apply” functionality
+is the key requirement of your gates.
+When controlled gates are applied, the user
+should be able to specify one or more bits with which the gate should be controlled.
+One way of implementing this <em>might</em> look like:
+<code>qreg.apply(2, controlled_not, {0,1})</code>, which would apply a <em>not</em> gate to qubit
+2 controlled by qubits 0 and 1.  For an additional challenge, you might try to
+replicate the syntax used by quantum assembly languages, for example,
+<code>qreg[2] | controlled_not({0,1})</code>.  Any <em>reasonable</em> syntax for expressing
+the application of gates to a quantum system is acceptable.</p>
+<p>As always, you are expected to follow the <a href="https://jberm6.git-pages.mst.edu/essman/homework/guidelines/">assignment guidelines</a>.</p>
+<h4 id="driver-information">Driver Information</h4>
+<p>You are responsible for implementing the following quantum circuit:
+<img src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/grover_3bit.png" alt="circuit diag" class="pure-img">
+This circuit is an implementation of Grover’s algorithm that searches the space
+of 3-bit binary strings to find the marked states <code>101</code> and <code>011</code> (these have the most significant bit on the left).
+The full details of this implementation are described by <a href="https://www.nature.com/articles/s41467-017-01904-7">Figgatt et al</a>.</p>
+<p>You are also responsible for implementing a heavily optimized version of the
+period-finding subroutine of Shor’s algorithm (the original version used 196 gates):
+<img src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/shor_fragment.png" alt="shor" class="pure-img">
+This particular implementation was designed to factor <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-14-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;15&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-76" style="width: 3.63em; display: inline-block;"><span style="display: inline-block; position: relative; width: 3.239em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1003.18em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-77"><span class="mi" id="MathJax-Span-78" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.114em;"></span></span><span class="mo" id="MathJax-Span-79" style="font-family: MathJax_Main; padding-left: 0.282em;">=</span><span class="mn" id="MathJax-Span-80" style="font-family: MathJax_Main; padding-left: 0.282em;">15</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>N</mi><mo>=</mo><mn>15</mn></math></span></span><script type="math/tex" id="MathJax-Element-14">N=15</script> using <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-15-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;7&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-81" style="width: 2.681em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.402em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1002.4em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-82"><span class="mi" id="MathJax-Span-83" style="font-family: MathJax_Math-italic;">a</span><span class="mo" id="MathJax-Span-84" style="font-family: MathJax_Main; padding-left: 0.282em;">=</span><span class="mn" id="MathJax-Span-85" style="font-family: MathJax_Main; padding-left: 0.282em;">7</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.941em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>=</mo><mn>7</mn></math></span></span><script type="math/tex" id="MathJax-Element-15">a=7</script>.
+The full details of this optimization are described by <a href="https://science.sciencemag.org/content/351/6277/1068">Monz et al</a>.</p>
+<p>Print the state of the quantum register after each circuit to <code>stdout</code>.
+Note: Both of the above circuits have their least significant bit at the top
+and their most significant bit at the bottom.</p>
+<h4 id="testing-your-code">Testing Your Code</h4>
+<p>Some ideas for testing your gates and registers are as follows:</p>
+<ul>
+<li>Ensure that applying a Hadamard gate to a single-bit register results
+in the state presented in lecture, and a measurement with equal probability of 0 and 1</li>
+<li>Ensure that applying a NOT gate to a single-bit register inverts the state</li>
+<li>Ensure that applying a NOT gate to both bits in a two-bit register inverts
+the state</li>
+<li>Try to create a controlled NOT gate, and ensure that the
+<span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-16-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;mo&gt;&amp;#x00D7;&lt;/mo&gt;&lt;mn&gt;4&lt;/mn&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-86" style="width: 2.514em; display: inline-block;"><span style="display: inline-block; position: relative; width: 2.235em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.565em, 1002.18em, 2.57em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-87"><span class="mn" id="MathJax-Span-88" style="font-family: MathJax_Main;">4</span><span class="mo" id="MathJax-Span-89" style="font-family: MathJax_Main; padding-left: 0.226em;">×</span><span class="mn" id="MathJax-Span-90" style="font-family: MathJax_Main; padding-left: 0.226em;">4</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.059em; border-left: 0px solid; width: 0px; height: 0.878em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>4</mn><mo>×</mo><mn>4</mn></math></span></span><script type="math/tex" id="MathJax-Element-16">4 \times 4</script> linear operator that is generated matches what was presented in lecture</li>
+<li>Repeat the above, except for a controlled controlled NOT gate (a gate with two control qubits)</li>
+<li>Once both of the above work, try swapping the positions of the control and
+target bits, making sure that everything still works</li>
+</ul>
+<p>Making sure that the algorithms produce the correct result is fairly simple:</p>
+<ul>
+<li>The result of Grover’s algorithm (the first circuit) should always be
+one of the marked states</li>
+<li>The result of Shor’s algorithm (the second circuit) should always be the
+period of the function <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-17-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mrow class=&quot;MJX-TeXAtom-ORD&quot;&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;m&lt;/mi&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;o&lt;/mi&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;d&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-91" style="width: 8.764em; display: inline-block;"><span style="display: inline-block; position: relative; width: 7.815em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.509em, 1007.7em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-92"><span class="mi" id="MathJax-Span-93" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.059em;"></span></span><span class="mo" id="MathJax-Span-94" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-95" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-96" style="font-family: MathJax_Main;">)</span><span class="mo" id="MathJax-Span-97" style="font-family: MathJax_Main; padding-left: 0.282em;">=</span><span class="msubsup" id="MathJax-Span-98" style="padding-left: 0.282em;"><span style="display: inline-block; position: relative; width: 1.007em; height: 0px;"><span style="position: absolute; clip: rect(3.407em, 1000.5em, 4.188em, -999.997em); top: -4.015em; left: 0em;"><span class="mi" id="MathJax-Span-99" style="font-family: MathJax_Math-italic;">a</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span><span style="position: absolute; top: -4.406em; left: 0.505em;"><span class="mi" id="MathJax-Span-100" style="font-size: 70.7%; font-family: MathJax_Math-italic;">x</span><span style="display: inline-block; width: 0px; height: 4.021em;"></span></span></span></span><span class="mo" id="MathJax-Span-101" style="font-family: MathJax_Main;">(</span><span class="texatom" id="MathJax-Span-102"><span class="mrow" id="MathJax-Span-103"><span class="mi" id="MathJax-Span-104" style="font-family: MathJax_Main;">m</span><span class="mi" id="MathJax-Span-105" style="font-family: MathJax_Main;">o</span><span class="mi" id="MathJax-Span-106" style="font-family: MathJax_Main;">d</span></span></span><span class="mi" id="MathJax-Span-107" style="font-family: MathJax_Math-italic;">N<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.114em;"></span></span><span class="mo" id="MathJax-Span-108" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msup><mi>a</mi><mi>x</mi></msup><mo stretchy="false">(</mo><mrow class="MJX-TeXAtom-ORD"><mi mathvariant="normal">m</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">d</mi></mrow><mi>N</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-17">f(x) = a^x (\mathrm{mod} N)</script> - you can graph <span class="MathJax_Preview" style="color: inherit; display: none;"></span><span class="MathJax" id="MathJax-Element-18-Frame" tabindex="0" data-mathml="&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/math&gt;" role="presentation" style="position: relative;"><nobr aria-hidden="true"><span class="math" id="MathJax-Span-109" style="width: 2.123em; display: inline-block;"><span style="display: inline-block; position: relative; width: 1.9em; height: 0px; font-size: 112%;"><span style="position: absolute; clip: rect(1.509em, 1001.79em, 2.793em, -999.997em); top: -2.397em; left: 0em;"><span class="mrow" id="MathJax-Span-110"><span class="mi" id="MathJax-Span-111" style="font-family: MathJax_Math-italic;">f<span style="display: inline-block; overflow: hidden; height: 1px; width: 0.059em;"></span></span><span class="mo" id="MathJax-Span-112" style="font-family: MathJax_Main;">(</span><span class="mi" id="MathJax-Span-113" style="font-family: MathJax_Math-italic;">x</span><span class="mo" id="MathJax-Span-114" style="font-family: MathJax_Main;">)</span></span><span style="display: inline-block; width: 0px; height: 2.402em;"></span></span></span><span style="display: inline-block; overflow: hidden; vertical-align: -0.309em; border-left: 0px solid; width: 0px; height: 1.253em;"></span></span></nobr><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></math></span></span><script type="math/tex" id="MathJax-Element-18">f(x)</script>
+to verify</li>
+</ul>
+<p>If you are having trouble integrating your gates into a circuit, consider using
+<a href="https://algassert.com/quirk#circuit=%7B%22cols%22:%5B%5D%7D">Quirk</a> in an iterative fashion.
+That is, apply one gate to both the Quirk simulation and your simulation,
+verify that the resulting states match, then repeat for all gates in a circuit.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="deliverables">Deliverables</h3>
+<ul>
+<li>Code for your complex number class, quantum gates, quantum register, Kronecker product, and the driver described above should be submitted to your assigned GitLab repository</li>
+<li>A <code>Makefile</code> should also be included that builds your class/driver into a Linux-compatible executable called <code>hw6.out</code></li>
+<li>A UML class diagram should be submitted in your Git repository - it should be named either <code>uml.png</code> or <code>uml.pdf</code></li>
+</ul>
+<h3 id="rubric">Rubric</h3>
+<table class="pure-table">
+<thead>
+<tr>
+<th>Criteria</th>
+<th>Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Makefile</strong> - must build executable, clean up after itself, etc</td>
+<td>5</td>
+</tr>
+<tr>
+<td><strong>UML Diagram</strong> - should be accurate, clear, and use correct notation</td>
+<td>10</td>
+</tr>
+<tr>
+<td><strong>Code Structure</strong> - should match the standard, be readable, and use appropriate structure</td>
+<td>20</td>
+</tr>
+<tr>
+<td><strong>Program</strong> - should be memory-safe, implement the requested driver, conform to requirements, and pass all tests</td>
+<td>65</td>
+</tr>
+<tr>
+<td><em>Total</em></td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+</div>
+  <div class="footer">
+  <div class="pure-menu pure-menu-horizontal">
+    <ul class="pure-menu-list">
+      <li class="pure-menu-item" title="RSS Feed">
+        <a href="https://jberm6.git-pages.mst.edu/essman/index.xml" class="pure-menu-link">RSS</a>
+      </li>
+      <li class="pure-menu-item fix-cursor-pointer" title="Go to top">
+        <a class="pure-menu-link" id="btn-gototop">
+          <span class="fix-placement-up">⇧︎</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript" src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/MathJax.js.download">
+</script>
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+
+
+
+  </div>
+  <div class="pure-u-1-24 pure-u-md-5-24"></div>
+</div>
+
+<script type="text/javascript" src="./Homework 6 - Complex Numbers, Outer Products, and Quantum Computing _ CS 5201 - Josh Essman_files/MathJax.js.download">
+</script>
+
+<script type="text/x-mathjax-config;executed=true">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+
+
+
+<div style="position: absolute; width: 0px; height: 0px; overflow: hidden; padding: 0px; border: 0px; margin: 0px;"><div id="MathJax_Font_Test" style="position: absolute; visibility: hidden; top: 0px; left: 0px; width: auto; padding: 0px; border: 0px; margin: 0px; white-space: nowrap; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; font-size: 40px; font-weight: normal; font-style: normal; font-family: MathJax_AMS, sans-serif;"></div></div></body></html>

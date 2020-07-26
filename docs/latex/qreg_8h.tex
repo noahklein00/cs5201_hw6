@@ -1,0 +1,59 @@
+\hypertarget{qreg_8h}{}\section{qreg.\+h File Reference}
+\label{qreg_8h}\index{qreg.\+h@{qreg.\+h}}
+{\ttfamily \#include \char`\"{}n\+Vect.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}complex.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gatedata.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}n\+Trix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}kronecker.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qreg.\+hpp\char`\"{}}\newline
+Include dependency graph for qreg.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{qreg_8h__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classqreg}{qreg$<$ size $>$}
+\begin{DoxyCompactList}\small\item\em qreg class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$int size$>$ }\\std\+::ostream \& \hyperlink{qreg_8h_a52f1eed320cfd61ac0a63f9e258e0c1c}{operator$<$$<$} (std\+::ostream \&out, \hyperlink{classqreg}{qreg}$<$ size $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em operator $<$$<$ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definitions for the quantum register class. ~\newline
+Programmer\+: Noah Klein ~\newline
+Class\+: C\+S5201 ~\newline
+Assignment\+: Homework 6 ~\newline
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{qreg_8h_a52f1eed320cfd61ac0a63f9e258e0c1c}\label{qreg_8h_a52f1eed320cfd61ac0a63f9e258e0c1c}} 
+\index{qreg.\+h@{qreg.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!qreg.\+h@{qreg.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$int size$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\hyperlink{classqreg}{qreg}$<$ size $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+operator $<$$<$ 
+
+Description\+: Insertion operator overload for the qreg class that measures the state of the system and outputs it in the proper format. 
+\begin{DoxyParams}{Parameters}
+{\em out} & is the ostream object. \\
+\hline
+{\em rhs} & is the qreg object to be output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+If the probability of a state is less than .00001, this is interpreted as 0 to assist with floating point error. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The state is measured and output accordingly. If the system is measured again it will output the same information. 
+\end{DoxyPostcond}

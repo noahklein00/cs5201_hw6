@@ -1,0 +1,445 @@
+\hypertarget{classcomplex}{}\section{complex$<$ T $>$ Class Template Reference}
+\label{classcomplex}\index{complex$<$ T $>$@{complex$<$ T $>$}}
+
+
+complex class.  
+
+
+
+
+{\ttfamily \#include $<$complex.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcomplex_a9752049742449cbc9571cd8f183f72b2}{complex} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex_a27a5d75c2060b32de98ae4666fd691d1}{complex} (const T \&a, const T \&b)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex_aca6c030056b5e089883c5e64a0309c28}{complex} (const \hyperlink{classcomplex}{complex} \&rhs)
+\begin{DoxyCompactList}\small\item\em Copy Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex} \& \hyperlink{classcomplex_a67d65378570f4b7a158b14a1502cc75f}{operator=} (const \hyperlink{classcomplex}{complex} \&rhs)
+\begin{DoxyCompactList}\small\item\em = operator \end{DoxyCompactList}\item 
+\hyperlink{classcomplex_a949d63a288cccf405266874f95357815}{$\sim$complex} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+T \hyperlink{classcomplex_a9e88306cc536506d0370b7376e40287b}{real} () const
+\begin{DoxyCompactList}\small\item\em Real Accessor. \end{DoxyCompactList}\item 
+T \hyperlink{classcomplex_a4edf203a6e7005a5d6817473d703a423}{imag} () const
+\begin{DoxyCompactList}\small\item\em Imaginary Accessor. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex_abef23308534cc50484e7d154a8497dbc}{operator-\/} () const
+\begin{DoxyCompactList}\small\item\em Additive Inverse. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex_a0a6eb0b21f6f7d0084c7edc637e98e10}{operator!} () const
+\begin{DoxyCompactList}\small\item\em Complex Conjugate. \end{DoxyCompactList}\item 
+T \hyperlink{classcomplex_a53710ae99345025cc52a6ecc1804cb8d}{operator$\sim$} () const
+\begin{DoxyCompactList}\small\item\em Magnitude. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex_aa10f3dbe0731c90d1b15408e3f11ae52}{operator+} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs) const
+\begin{DoxyCompactList}\small\item\em Addition. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex_a7f61f4a380f418de039d1f65946424ef}{operator-\/} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs) const
+\begin{DoxyCompactList}\small\item\em Subtraction. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex_ad2f08f4f8eea0ef2def536898addd7f3}{operator$\ast$} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs) const
+\begin{DoxyCompactList}\small\item\em Multiplication. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex_a0e0def25b2e4c7da5c8e845132560d2b}{operator=} (const int number)
+\begin{DoxyCompactList}\small\item\em Integer = operator. \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex_addf9684dc875ae196619c9fadd5fe48e}{operator+=} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em += operator \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex_a272e86ba6de2f88cb1803127f8ff0481}{operator-\/=} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em -\/= operator \end{DoxyCompactList}\item 
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex_a98240d564a6667f9acf5163821365cdc}{operator$\ast$=} (const \hyperlink{classcomplex}{complex}$<$ T $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em $\ast$= operator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename U $>$ }\\std\+::ostream \& \hyperlink{classcomplex_a860d572e8b354fd76998c8c1309754f9}{operator$<$$<$} (std\+::ostream \&out, const \hyperlink{classcomplex}{complex}$<$ U $>$ \&rhs)
+\begin{DoxyCompactList}\small\item\em Insertion operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class complex$<$ T $>$}
+
+complex class. 
+
+This class uses two type T objects to store and represent a complex number. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcomplex_a9752049742449cbc9571cd8f183f72b2}\label{classcomplex_a9752049742449cbc9571cd8f183f72b2}} 
+\index{complex@{complex}!complex@{complex}}
+\index{complex@{complex}!complex@{complex}}
+\subsubsection{\texorpdfstring{complex()}{complex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$\+::\hyperlink{classcomplex}{complex} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Description\+: Default constructor for the complex class that initializes the real value as 1 and the imaginary value as 0. \begin{DoxyPostcond}{Postcondition}
+A complex number is initialized with the values specified. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a27a5d75c2060b32de98ae4666fd691d1}\label{classcomplex_a27a5d75c2060b32de98ae4666fd691d1}} 
+\index{complex@{complex}!complex@{complex}}
+\index{complex@{complex}!complex@{complex}}
+\subsubsection{\texorpdfstring{complex()}{complex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$\+::\hyperlink{classcomplex}{complex} (\begin{DoxyParamCaption}\item[{const T \&}]{a,  }\item[{const T \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+Description\+: Parameterized constructor for the complex class that initializes the different parts with the values passed. 
+\begin{DoxyParams}{Parameters}
+{\em a} & is the real value for the complex number. \\
+\hline
+{\em b} & is the imaginary value for the complex number. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondition}
+A complex number is initialized with the values passed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_aca6c030056b5e089883c5e64a0309c28}\label{classcomplex_aca6c030056b5e089883c5e64a0309c28}} 
+\index{complex@{complex}!complex@{complex}}
+\index{complex@{complex}!complex@{complex}}
+\subsubsection{\texorpdfstring{complex()}{complex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$\+::\hyperlink{classcomplex}{complex} (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Copy Constructor. 
+
+Description\+: A copy constructor for the complex class that initializes a new complex object with the values of the complex object passed. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex object to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+operator = must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+A complex number is initialized with the same values as the object passed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a949d63a288cccf405266874f95357815}\label{classcomplex_a949d63a288cccf405266874f95357815}} 
+\index{complex@{complex}!````~complex@{$\sim$complex}}
+\index{````~complex@{$\sim$complex}!complex@{complex}}
+\subsubsection{\texorpdfstring{$\sim$complex()}{~complex()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$\+::$\sim$\hyperlink{classcomplex}{complex} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+Description\+: Placeholder function for complex destructor. \begin{DoxyPostcond}{Postcondition}
+The calling object is safely desctructed. 
+\end{DoxyPostcond}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcomplex_a4edf203a6e7005a5d6817473d703a423}\label{classcomplex_a4edf203a6e7005a5d6817473d703a423}} 
+\index{complex@{complex}!imag@{imag}}
+\index{imag@{imag}!complex@{complex}}
+\subsubsection{\texorpdfstring{imag()}{imag()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classcomplex}{complex}$<$ T $>$\+::imag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Imaginary Accessor. 
+
+Description\+: Accessor for the imaginary member for the complex class that returns a copy of the imaginary part of the calling object. \begin{DoxyReturn}{Returns}
+Returns a copy of m\+\_\+b from the calling object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcomplex_a0a6eb0b21f6f7d0084c7edc637e98e10}\label{classcomplex_a0a6eb0b21f6f7d0084c7edc637e98e10}} 
+\index{complex@{complex}!operator"!@{operator"!}}
+\index{operator"!@{operator"!}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator"!()}{operator!()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator! (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Complex Conjugate. 
+
+Description\+: Returns the complex conjugate of the calling object. -\/m\+\_\+b. \begin{DoxyReturn}{Returns}
+Returns a T object that represents the complex conjugate of the complex number. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+unary -\/ operator must be defined for type T. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classcomplex_ad2f08f4f8eea0ef2def536898addd7f3}\label{classcomplex_ad2f08f4f8eea0ef2def536898addd7f3}} 
+\index{complex@{complex}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Multiplication. 
+
+Description\+: Binary $\ast$ operator for the complex class that calculates the product of the two complex objects. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex object to be multiplied to the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex object that represents the product of the two complex objects. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary $\ast$ operator, Binary + operator, and unary -\/ operator must be defined for type T. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classcomplex_a98240d564a6667f9acf5163821365cdc}\label{classcomplex_a98240d564a6667f9acf5163821365cdc}} 
+\index{complex@{complex}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+$\ast$= operator 
+
+Description\+: $\ast$= operator overload to increase functionality with the \hyperlink{classnTrix}{n\+Trix} (and other) classes. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex number to multiply to the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns $\ast$this with modified data 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary $\ast$ operator, and = operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The calling object has the parameter multiplied to it. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_aa10f3dbe0731c90d1b15408e3f11ae52}\label{classcomplex_aa10f3dbe0731c90d1b15408e3f11ae52}} 
+\index{complex@{complex}!operator+@{operator+}}
+\index{operator+@{operator+}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Addition. 
+
+Description\+: Binary + operator for the complex class that calculates the addition of two complex objects. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex object to be added to the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex object that represents the addition of the two complex objects. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary += operator must be defined for type T. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classcomplex_addf9684dc875ae196619c9fadd5fe48e}\label{classcomplex_addf9684dc875ae196619c9fadd5fe48e}} 
+\index{complex@{complex}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
++= operator 
+
+Description\+: += operator overload to increase functionality with the \hyperlink{classnTrix}{n\+Trix} (and other) classes. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex number to add to the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns $\ast$this with modified data 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary + operator, and = operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The calling object has the parameter added to it. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_abef23308534cc50484e7d154a8497dbc}\label{classcomplex_abef23308534cc50484e7d154a8497dbc}} 
+\index{complex@{complex}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Additive Inverse. 
+
+Description\+: Returns the additive inverse of the calling object. -\/m\+\_\+a. \begin{DoxyReturn}{Returns}
+Returns a T object that represents the additive inverse of the complex number. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+unary -\/ operator must be defined for type T. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classcomplex_a7f61f4a380f418de039d1f65946424ef}\label{classcomplex_a7f61f4a380f418de039d1f65946424ef}} 
+\index{complex@{complex}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Subtraction. 
+
+Description\+: Binary -\/ operator for the complex class that calculates the subtraction of two complex objects. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex object to be subtracted from the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex object that represents the difference of the two complex objects. 
+\end{DoxyReturn}
+\begin{DoxyPostcond}{Postcondition}
+-\/= operator must be defined for type T. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a272e86ba6de2f88cb1803127f8ff0481}\label{classcomplex_a272e86ba6de2f88cb1803127f8ff0481}} 
+\index{complex@{complex}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+-\/= operator 
+
+Description\+: -\/= operator overload to increase functionality with the \hyperlink{classnTrix}{n\+Trix} (and other) classes. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex number to subtract from the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns $\ast$this with modified data 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary -\/ operator, and = operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The calling object has the parameter subtracted from it. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a67d65378570f4b7a158b14a1502cc75f}\label{classcomplex_a67d65378570f4b7a158b14a1502cc75f}} 
+\index{complex@{complex}!operator=@{operator=}}
+\index{operator=@{operator=}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classcomplex}{complex}$<$ T $>$ \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+= operator 
+
+Description\+: = operator for the complex class that sets the value of the calling object equal to the values of the object passed. 
+\begin{DoxyParams}{Parameters}
+{\em rhs} & is the complex number to be copied. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the calling object. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+= operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The calling object is set equal to the object passed. 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a0e0def25b2e4c7da5c8e845132560d2b}\label{classcomplex_a0e0def25b2e4c7da5c8e845132560d2b}} 
+\index{complex@{complex}!operator=@{operator=}}
+\index{operator=@{operator=}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\hyperlink{classcomplex}{complex}$<$ T $>$ \& \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const int}]{number }\end{DoxyParamCaption})}
+
+
+
+Integer = operator. 
+
+Description\+: Allows the complex number to be set \char`\"{}equal as\char`\"{} a passed integer. 
+\begin{DoxyParams}{Parameters}
+{\em number} & is the number to set the complex object \char`\"{}equal as\char`\"{}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex object whose non-\/imaginary component is equal to the parameter. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+Binary $\ast$ operator, Binary + operator, and unary -\/ operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The calling object is now set \char`\"{}equal as\char`\"{} the parameter 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classcomplex_a53710ae99345025cc52a6ecc1804cb8d}\label{classcomplex_a53710ae99345025cc52a6ecc1804cb8d}} 
+\index{complex@{complex}!operator$\sim$@{operator$\sim$}}
+\index{operator$\sim$@{operator$\sim$}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator$\sim$()}{operator~()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classcomplex}{complex}$<$ T $>$\+::operator$\sim$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Magnitude. 
+
+Description\+: Returns the magnitude of the complex number. \begin{DoxyReturn}{Returns}
+Returns a type T object that represents the magnitude of the complex number. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+binary $\ast$ operator and binary + operator must be defined for type T. 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{classcomplex_a9e88306cc536506d0370b7376e40287b}\label{classcomplex_a9e88306cc536506d0370b7376e40287b}} 
+\index{complex@{complex}!real@{real}}
+\index{real@{real}!complex@{complex}}
+\subsubsection{\texorpdfstring{real()}{real()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \hyperlink{classcomplex}{complex}$<$ T $>$\+::real (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Real Accessor. 
+
+Description\+: Accessor for the real member for the complex class that returns a copy of the real part of the calling object. \begin{DoxyReturn}{Returns}
+Returns a copy of m\+\_\+a from the calling object. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classcomplex_a860d572e8b354fd76998c8c1309754f9}\label{classcomplex_a860d572e8b354fd76998c8c1309754f9}} 
+\index{complex@{complex}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!complex@{complex}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$typename T$>$ \\
+template$<$typename U $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \hyperlink{classcomplex}{complex}$<$ U $>$ \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Insertion operator. 
+
+Description\+: Insertion operator overload for the complex class that prints the object in the proper format. 
+\begin{DoxyParams}{Parameters}
+{\em out} & is the ostream passed to the function. \\
+\hline
+{\em rhs} & is the complex object to be output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the ostream object. 
+\end{DoxyReturn}
+\begin{DoxyPrecond}{Precondition}
+$<$$<$ operator must be defined for type T. 
+\end{DoxyPrecond}
+\begin{DoxyPostcond}{Postcondition}
+The complex object is output to the stream. 
+\end{DoxyPostcond}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{complex_8h}{complex.\+h}\item 
+complex.\+hpp\end{DoxyCompactItemize}
